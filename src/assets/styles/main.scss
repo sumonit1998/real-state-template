@@ -1,0 +1,22 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap';
+@import './Sass/_variable';
+
+
+
+/*------ reset css --*/
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+@import'./Sass/__header.scss';

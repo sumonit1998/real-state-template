@@ -1,0 +1,41 @@
+#header {
+    .header-top {
+        display: flex;
+        align-items: center;
+        padding: 15px 0px;
+        border-bottom: 1px solid $primary;
+        .brand-name {
+            img {
+                max-width: 180px;
+            }
+        }
+        .social-icon {
+            a {
+                margin: 0px 5px;
+                svg {
+                    padding: 8px 9px;
+                    color: white;
+                    background-color: $primary;
+                    border-radius: 50px;
+                    &.fa-facebook-f {
+                        padding: 8px 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+.main-menu {
+    .navbar {
+        padding: 5px 0px;
+        .navbar-nav {
+            .nav-link {
+                &.dropdown-toggle{
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
