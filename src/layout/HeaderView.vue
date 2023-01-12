@@ -1,5 +1,5 @@
 <template>
-   <section id="header">
+   <section id="header" v-bind:class="{sticky: position > 100}">
         <div class="top-bar">
             <div class="container">
                 <div class="header-top">
@@ -24,20 +24,22 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav me-auto">
-                            <a href="#" class="nav-item nav-link active">Home</a>
-                            <a href="#" class="nav-item nav-link">Profile</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
-                                <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Inbox</a>
-                                    <a href="#" class="dropdown-item">Sent</a>
-                                    <a href="#" class="dropdown-item">Drafts</a>
-                                </div>
-                            </div>
-                            <a href="#" class="nav-item nav-link" tabindex="-1">Reports</a>
+                            <template v-for="item in mainMenu">
+                                <template v-if="item.items">
+                                    <div class="nav-item dropdown">
+                                        <a :href="item.path" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ item.label }} <font-awesome-icon icon="fa-solid fa-chevron-down" /></a>
+                                        <div class="dropdown-menu">
+                                            <RouterLink v-for="childItem in item.items" :to="childItem.path" class="dropdown-item">{{ childItem.label }} </RouterLink>
+                                        </div>
+                                    </div>
+                                </template>
+                                <template v-else>
+                                    <RouterLink  :to="item.path" class="nav-item nav-link" tabindex="-1">{{ item.label }}</RouterLink>
+                                </template>
+                            </template>
                         </div>
                         <div class="navbar-nav">
-                            <a href="#" class="nav-item nav-link">Login</a>
+                            <a href="#" class="nav-item nav-link">test</a>
                         </div>
                     </div>
                 </div>
@@ -45,3 +47,54 @@
         </div>
    </section>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router';
+export default {
+    data() {
+        return{
+            mainMenu:[{
+                label: 'Home', path: 'javascript:;',
+                items: [
+                    {label: 'Home Version 1', path: '/'},
+                    {label: 'Home Version 2', path: '/'},
+                    {label: 'Home Version 3', path: '/'}
+                ]
+            },
+            {
+                label: 'Blog', path: 'javascript:;',
+                items: [
+                    { label: 'Blog grid', path: '/'},
+                    { label: 'Blog list', path: '/'}
+                ]
+            },
+            {
+                label: 'Portfolio', path: 'javascript:;',
+                items: [
+                    {label: 'portfolio list', path: '/'},
+                    {label: 'portfolio gird', path: '/'}
+                ]
+            },
+            {
+                label: 'Features', path: 'javascript:;',
+                items: [
+                    { label: 'Features about', path: '/about'},
+                    { label: 'Features service', path: '/'},
+                    { label: 'Features FAQ', path: '/'},
+                ]
+            },
+            {
+                label: 'Contact', path: '/'
+            }],
+            position: 0,
+        }
+    },
+    created () {
+        //console.log('aaaa')
+        var self = this;
+        document.onscroll = function(e){
+        self.position = document.documentElement.scrollTop || document.body.scrollTop;
+        }
+    },
+}
+</script>
