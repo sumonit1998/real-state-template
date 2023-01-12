@@ -1,5 +1,5 @@
 <template>
-   <section id="header" v-bind:class="{sticky: position > 100}">
+   <section id="header">
         <div class="top-bar">
             <div class="container">
                 <div class="header-top">
@@ -15,37 +15,38 @@
                 </div>
             </div>
         </div>
-        <div class="main-menu">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-                <div class="container">
-                    <!-- <a href="#" class="navbar-brand">Brand</a> -->
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <font-awesome-icon icon="fa-solid fa-bars" />
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav me-auto">
-                            <template v-for="item in mainMenu">
-                                <template v-if="item.items">
-                                    <div class="nav-item dropdown">
-                                        <a :href="item.path" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ item.label }} <font-awesome-icon icon="fa-solid fa-chevron-down" /></a>
-                                        <div class="dropdown-menu">
-                                            <RouterLink v-for="childItem in item.items" :to="childItem.path" class="dropdown-item">{{ childItem.label }} </RouterLink>
-                                        </div>
+   </section>
+   <div class="main-menu" :class="{ 'sticky': scrolled }"
+      v-show="handleScroll">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container">
+                <!-- <a href="#" class="navbar-brand">Brand</a> -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <font-awesome-icon icon="fa-solid fa-bars" />
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        <template v-for="item in mainMenu">
+                            <template v-if="item.items">
+                                <div class="nav-item dropdown">
+                                    <a :href="item.path" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ item.label }} <font-awesome-icon icon="fa-solid fa-chevron-down" /></a>
+                                    <div class="dropdown-menu">
+                                        <RouterLink v-for="childItem in item.items" :to="childItem.path" class="dropdown-item">{{ childItem.label }} </RouterLink>
                                     </div>
-                                </template>
-                                <template v-else>
-                                    <RouterLink  :to="item.path" class="nav-item nav-link" tabindex="-1">{{ item.label }}</RouterLink>
-                                </template>
+                                </div>
                             </template>
-                        </div>
-                        <div class="navbar-nav">
-                            <a href="#" class="nav-item nav-link">test</a>
-                        </div>
+                            <template v-else>
+                                <RouterLink  :to="item.path" class="nav-item nav-link" tabindex="-1">{{ item.label }}</RouterLink>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link">test</a>
                     </div>
                 </div>
-            </nav>
-        </div>
-   </section>
+            </div>
+        </nav>
+    </div>
 </template>
 
 <script>
@@ -86,15 +87,28 @@ export default {
             {
                 label: 'Contact', path: '/'
             }],
-            position: 0,
+            limitPosition: 200,
+            scrolled: false,
+            lastPosition: 80
         }
     },
-    created () {
-        //console.log('aaaa')
-        var self = this;
-        document.onscroll = function(e){
-        self.position = document.documentElement.scrollTop || document.body.scrollTop;
-        }
+    methods: {
+    handleScroll() {
+      if (
+        this.limitPosition < window.scrollY
+      ) {
+        this.scrolled = true;
+      }
+      if (this.lastPosition > window.scrollY) {
+        this.scrolled = false;
+      }
     },
+  },
+  beforeMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
 }
 </script>

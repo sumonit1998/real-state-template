@@ -1,9 +1,13 @@
-<script setup>
-
-</script>
-
 <template>
   <main>
-    <font-awesome-icon icon="fa-brands fa-twitter" /> home
+    <BannerView />
   </main>
 </template>
+<script>
+import BannerView from '../components/homeView/BannerView.vue';
+export default {
+  components: {
+    BannerView
+  }
+}
+</script>

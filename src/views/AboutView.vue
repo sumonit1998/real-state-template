@@ -1,15 +1,35 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+
+  <div class="container">
+    <div class="about" v-for="item in listItems">
+      <h4>Id: {{ item.id }}</h4>
+      <h6>{{ item.title }}</h6>
+      <p>{{ item.body }}</p>
+    </div>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+<script>
+export default {
+    data() {
+      return {
+        listItems: []
+      }
+    },
+    methods: {
+      async getData() {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const finalRes = await res.json();
+        this.listItems = finalRes;
+      }
+    },
+    mounted() {
+      this.getData()
+    }
   }
-}
+</script>
+<style>
+  .about{
+    padding: 10px 0px;
+  }
 </style>
