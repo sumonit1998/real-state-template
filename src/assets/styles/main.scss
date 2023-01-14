@@ -20,3 +20,113 @@ ul {
 }
 
 @import'./Sass/__header.scss';
+
+
+/*------------ hero slider */
+.hero-slider {
+    .carousel__item {
+        background-image: url("./../../src/assets/images/bg-4.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 70vh;
+        padding: 50px 0px;
+        .carousel-text {
+            transform: translate(0%, 70%);
+            h2 {
+                text-transform: uppercase;
+                margin: 10px auto;
+                color: white;
+                font-weight: 700;
+                max-width: 1200px;
+            }
+            p {
+                max-width: 800px;
+                margin: 20px auto;
+                font-weight: 400;
+                color: white;
+                text-align: inherit;
+            }
+        }
+        .btn-forsale {
+            background-color: $primary;
+            padding: 10px 30px;
+            color: white;
+            margin: 0px 20px;
+            font-weight: 600;
+            border: 1px solid $primary;
+            transition: all .3s;
+            &:hover {
+                background-color: transparent !important;
+                border: 1px solid $primary;
+                transition: all .3s;
+            }
+        }
+        .btn-forlease {
+            background-color: white;
+            padding: 10px 30px;
+            color: $primary;
+            margin: 0px 20px;
+            font-weight: 600;
+            border: 1px solid white;
+            &:hover {
+                background-color: transparent !important;
+                border: 1px solid $primary;
+                transition: all .3s;
+                color: white;
+            }
+        }
+    }
+    .carousel__pagination {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        .carousel__pagination-button {
+            &::after {
+                width: 30px;
+                height: 10px;
+                background-color: $primary;
+                border-radius: 5px;
+            }
+            &.carousel__pagination-button--active {
+                &::after {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+/*--------- service-banner section css --------------*/
+
+.service-banner {
+    padding: 50px 0px;
+    background-color: $primary;
+    .d-flex {
+        align-items: center;
+        padding: 5px;
+        margin-top: 10px;
+        .item-img {
+            margin-right: 20px;
+            img {
+                max-width: 100px;
+            }
+        }
+        .item-content {
+            h4 {
+                font-weight: 700;
+                color: $secondary;
+            }
+            p {
+                margin: 0;
+                padding: 0;
+                font-weight: 500;
+                color: white;
+            }
+        }
+    }
+}
