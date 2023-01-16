@@ -5,14 +5,13 @@
       <div class="row">
         <div class="col-md-4 mt-5" v-for="item in listItems">
           <div class="card">
-            <img v-if="item.urlToImage" :src="item.urlToImage" class="card-img-top" :alt="item.title">
-            <img v-else src="./../assets/images/bg-1.jpg" class="card-img-top" :alt="item.title">
+            <img src="./../assets/images/background/bg-1.jpg" class="card-img-top" :alt="item.title">
             <div class="card-body">
               <h5 class="card-title">{{item.title}}</h5>
-              <p class="card-text">{{ item.description }}</p>
+              <p class="card-text">{{ item.body }}</p>
             </div>
             <div class="card-body">
-              <a target="_blank" :href="item.url" class="card-link">View More</a>
+              <a target="_blank" href="#" class="card-link">View More</a>
             </div>
           </div>
         </div>
@@ -30,12 +29,12 @@ export default {
     },
     methods: {
       async getData() {
-        const res = await fetch("https://newsapi.org/v2/everything?q=tesla&from=2022-12-13&sortBy=publishedAt&apiKey=dd29379b24b146158f657cbdbceb0dac");
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
         
         const finalRes = await res.json();
         
-        this.listItems = finalRes.articles;
-        //console.log(this.listItems);
+        this.listItems = finalRes;
+        console.log(this.listItems);
       }
     },
     mounted() {
