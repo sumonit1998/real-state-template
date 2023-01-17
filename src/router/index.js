@@ -18,8 +18,8 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/about/:id',
-      name: 'single',
+      path: '/about/latest-project',
+      name: 'latest-project',
       component: () => import('../views/SingleView.vue')
     },
     

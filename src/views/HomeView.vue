@@ -15,17 +15,20 @@
       </div>
     </section>
     <RecentProject />
+    <SidebarView />
   </main>
 </template>
 <script>
 import BannerView from '../components/homeView/BannerView.vue';
 import Servicebanner from '../components/homeView/Servicebanner.vue';
 import RecentProject from '../components/homeView/RecentProject.vue';
+import SidebarView from '../components/homeView/SidebarView.vue';
 export default {
   components: {
     BannerView,
     Servicebanner,
-    RecentProject
+    RecentProject,
+    SidebarView
   }
 }
 </script>

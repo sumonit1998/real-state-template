@@ -9,7 +9,12 @@
             <Slide v-for="item in listItems.slice(0, 10)" :key="item">
                <div class="carousel__item">
                   <div class="project-item">
-                     <img :src="item.image" :alt="item.title">
+                    <div class="item-img">
+                        <div class="item-overlay">
+                           <router-link to="/about/latest-project"><font-awesome-icon icon="fa-solid fa-eye" /> See Details</router-link>
+                        </div>
+                        <img :src="item.image" :alt="item.title">
+                    </div>
                      <h4>{{ item.title }}</h4>
                      <p>{{ item.desc}}</p>
                   </div>
