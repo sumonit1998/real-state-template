@@ -3,15 +3,15 @@
   <div class="container">
     <div class="about">
       <div class="row">
-        <div class="col-md-4 mt-5" v-for="item in listItems">
+        <div class="col-md-4 mt-5" v-for="product in products" :key="product.id" :product="product">
           <div class="card">
-            <img src="./../assets/images/background/bg-1.jpg" class="card-img-top" :alt="item.title">
+            <img src="./../assets/images/background/bg-1.jpg" class="card-img-top" :alt="product.title">
             <div class="card-body">
-              <h5 class="card-title">{{item.title}}</h5>
-              <p class="card-text">{{ item.body }}</p>
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{ product.body }}</p>
             </div>
             <div class="card-body">
-              <a target="_blank" href="#" class="card-link">View More</a>
+              <router-link :to="{ name: 'single', params: { id: 25}, props: {product}}">Navigate to Page2</router-link>
             </div>
           </div>
         </div>
@@ -21,26 +21,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-    data() {
-      return {
-        listItems: []
-      }
-    },
-    methods: {
-      async getData() {
-        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-        
-        const finalRes = await res.json();
-        
-        this.listItems = finalRes;
-        console.log(this.listItems);
-      }
-    },
-    mounted() {
-      this.getData();
-    }
+  computed: mapState({
+    products: state => state.products.all
+  }),
+  created () {
+    this.$store.dispatch('products/getAllProducts')
   }
+}
 </script>
 <style>
   .about{

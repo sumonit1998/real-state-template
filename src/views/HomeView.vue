@@ -16,6 +16,7 @@
     </section>
     <RecentProject />
     <SidebarView />
+    <BlogView />
   </main>
 </template>
 <script>
@@ -23,12 +24,15 @@ import BannerView from '../components/homeView/BannerView.vue';
 import Servicebanner from '../components/homeView/Servicebanner.vue';
 import RecentProject from '../components/homeView/RecentProject.vue';
 import SidebarView from '../components/homeView/SidebarView.vue';
+import BlogView from '../components/homeView/BlogView.vue';
+import './../assets/styles/Sass/homeView.scss';
 export default {
   components: {
     BannerView,
     Servicebanner,
     RecentProject,
-    SidebarView
+    SidebarView,
+    BlogView
   }
 }
 </script>

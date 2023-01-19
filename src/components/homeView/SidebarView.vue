@@ -37,6 +37,27 @@
                         <div class="heading">
                             <h4>Client Testimonials</h4>
                         </div>
+                        <div class="client-review">
+                            <Carousel :mouseDrag="false">
+                                <Slide v-for="slide in 5" :key="slide">
+                                    <div class="carousel__item">
+                                        <div class="review">
+                                            <p>"Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est."</p>
+                                            <div class="d-flex align-items-center p-2">
+                                                <img src="./../../assets/images/user-pic/4.jpg" alt="">
+                                                <div class="client">
+                                                    <h4>Jayonto Sarkar</h4>
+                                                    <p>Project manager</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Slide>
+                                <template #addons>
+                                <Navigation />
+                                </template>
+                            </Carousel>
+                        </div>
                    </div>
                 </div>
             </div>
@@ -45,7 +66,13 @@
 </template>
 
 <script>
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
 export default {
+    components: {
+        Carousel,
+        Slide,
+        Navigation,
+    },
     data () {
         return {
             accListItem: [{
@@ -68,8 +95,8 @@ export default {
                 subtitle: 'We don’t have a one-size-fits-all approach to client support.',
                 desc: 'We will tailor a support arrangement for you that meets your specific needs and budget. We offer two different support models',
                 icon: 'fa-solid fa-headset'
-            }
-        ]
+            }],
+            clientReview: []
         }
     }
 }

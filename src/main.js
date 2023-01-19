@@ -8,6 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBars,faChevronDown,faMagnifyingGlass,faEye,faHeadset,faBook } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter,faFacebookF,faLinkedinIn,faVimeoV,faSafari } from '@fortawesome/free-brands-svg-icons'
+import store from './store'
 
 
 
@@ -15,5 +16,6 @@ library.add(faBars,faTwitter,faFacebookF,faLinkedinIn,faVimeoV,faChevronDown,faM
 const app = createApp(App)
 
 app.use(router)
+app.use(store)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount('#app')

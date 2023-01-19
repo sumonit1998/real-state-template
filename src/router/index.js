@@ -18,9 +18,10 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/about/latest-project',
-      name: 'latest-project',
-      component: () => import('../views/SingleView.vue')
+      path: '/blog/:id',
+      name: 'single',
+      component: () => import('../views/SingleView.vue'),
+      props: true
     },
     
   ]

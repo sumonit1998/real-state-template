@@ -11,7 +11,7 @@
                   <div class="project-item">
                     <div class="item-img">
                         <div class="item-overlay">
-                           <router-link to="/about/latest-project"><font-awesome-icon icon="fa-solid fa-eye" /> See Details</router-link>
+                           <router-link :to="{ name: 'single', params: { id: 22 }}"><font-awesome-icon icon="fa-solid fa-eye" /> See Details</router-link>
                         </div>
                         <img :src="item.image" :alt="item.title">
                     </div>
@@ -30,7 +30,6 @@
 </template>
 <script>
 import { Carousel, Navigation, Slide } from 'vue3-carousel';
-import 'vue3-carousel/dist/carousel.css';
 
 export default ({
    data() {
