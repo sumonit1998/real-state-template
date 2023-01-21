@@ -361,7 +361,7 @@
                     border: none;
                     .icon {
                         margin-right: 20px;
-                        svg {
+                        i {
                             padding: 15px 16px;
                             font-size: 40px;
                             color: $primary;
@@ -458,3 +458,92 @@
 }
 
 /*--------- Blog Section css -----------*/
+.blog {
+    padding: 50px 0px;
+    background-color: rgb(213 213 213 / 14%);
+    .heading {
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h4 {
+            font-weight: 600;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            color: $gray;
+            margin: 0;
+        }
+        a {
+            font-size: 14px;
+            color: $primary;
+            text-decoration: none;
+            font-weight: 500;
+            i {
+                font-size: 12px;
+            }
+            &:hover {
+                opacity: 0.8;
+                transition: all .3s;
+            }
+        }
+    }
+    .blog-item {
+        margin: 10px auto;
+        box-shadow: 2px 2px 3px rgb(100 100 100 / 30%);
+        .item-image {
+            position: relative;
+            img {
+                border-radius: 5px 5px 0px 0px;
+            }
+            .date-time {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: $primary;
+                color: white;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                line-height: 20px;
+                .day {
+                    font-size: 22px;
+                }
+            }
+        }
+        .content {
+            background-color: white;
+            padding: 10px 5px;
+            a {
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: 600;
+                color: $primary;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                &:hover {
+                    opacity: 0.8;
+                }
+
+            }
+            p {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 400;
+                color: $secondary;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical; 
+            }
+            
+        }
+    }
+}

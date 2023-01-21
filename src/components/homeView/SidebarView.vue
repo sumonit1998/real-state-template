@@ -19,7 +19,7 @@
                                 <div class="accordion-item" v-for="(item, index) in accListItem" :key="item.id">
                                     <div :id="'collapse'+item.id" class="accordion-collapse collapse" :class="{ 'show': index === 0 }" :aria-labelledby="'heading'+item.id" data-bs-parent="#accordionFaq">
                                         <div class="d-flex align-items-center">
-                                            <div class="icon"><font-awesome-icon :icon="item.icon" /></div>
+                                            <div class="icon"><i :class="item.icon"></i></div>
                                             <div class="title">
                                                 <h2>{{ item.title }}</h2>
                                                 <h4>{{ item.subtitle }}</h4>

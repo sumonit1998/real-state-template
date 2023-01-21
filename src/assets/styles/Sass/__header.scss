@@ -20,7 +20,7 @@
         .social-icon {
             a {
                 margin: 0px 5px;
-                svg {
+                i {
                     padding: 8px 9px;
                     color: white;
                     background-color: $primary;
@@ -55,12 +55,12 @@
                 margin: 0px 5px;
                 .nav-link {
                     &.dropdown-toggle{
-                        svg {
+                        i {
                             font-size: 12px;
                             transition: all .3s;
                         }
                         &.show {
-                            svg {
+                            i {
                                 transform: rotate(180deg);
                                 transition: all .3s;
                             }
@@ -117,7 +117,7 @@
             &:focus {
                 box-shadow: 0 0 0 transparent !important;
             }
-            svg {
+            i {
                 color: $primary;
             }
         }
@@ -134,7 +134,7 @@
             }
         }
         .btn {
-            svg {
+            i {
                 color: $primary;
             }
             &:active {

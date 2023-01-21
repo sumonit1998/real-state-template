@@ -1,7 +1,7 @@
 <template>
     <div>
-        <template v-for="item in products">
-            <div v-if=" item.id == id " class="list">
+        <template v-for="(item, index) in products">
+            <div v-if=" index == id " class="list">
                 <h1>{{ item.title }}</h1>
                 <h1>{{ item.body }}</h1>
             </div>

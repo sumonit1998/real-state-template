@@ -1,4 +1,11 @@
 /*---- color variable css ---------*/
 $primary: #F05200;
-$secondary: #1C0831;
+$secondary: #0d1824;
 $gray: #666666;
+
+.color-primary {
+    color: $primary !important;
+}
+.text-night {
+    color: #d0dfed !important
+}

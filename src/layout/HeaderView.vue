@@ -8,10 +8,10 @@
                             <RouterLink to="/" ><img src="@/assets/images/logo.png" alt="Brand Name" /></RouterLink>
                         </div>
                         <div class="social-icon">
-                            <a href=""><font-awesome-icon icon="fa-brands fa-facebook-f" /></a>
-                            <a href=""><font-awesome-icon icon="fa-brands fa-twitter" /></a>
-                            <a href=""><font-awesome-icon icon="fa-brands fa-linkedin-in" /></a>
-                            <a href=""><font-awesome-icon icon="fa-brands fa-vimeo-v" /></a>
+                            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter" ></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href=""><i class="fa-brands fa-vimeo-v" ></i></a>
                         </div>
                     </div>
                 </div>
@@ -22,14 +22,14 @@
                 <div class="container">
                     <!-- <a href="#" class="navbar-brand">Brand</a> -->
                     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <font-awesome-icon icon="fa-solid fa-bars" />
+                        <i class="fa-solid fa-bars" ></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav me-auto">
                             <template v-for="item in mainMenu">
                                 <template v-if="item.items">
                                     <div class="nav-item dropdown">
-                                        <a :href="item.path" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ item.label }} <font-awesome-icon icon="fa-solid fa-chevron-down" /></a>
+                                        <a :href="item.path" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ item.label }} <i class="fa-solid fa-chevron-down" ></i></a>
                                         <div class="dropdown-menu">
                                             <RouterLink v-for="childItem in item.items" :to="childItem.path" class="dropdown-item">{{ childItem.label }} </RouterLink>
                                         </div>
@@ -43,7 +43,7 @@
                     </div>
                     <form class="d-flex search-box">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn" ><font-awesome-icon icon="fa-solid fa-magnifying-glass" /></button>
+                        <button class="btn" ><i class="fa-solid fa-magnifying-glass" ></i></button>
                     </form>
                 </div>
             </nav>
