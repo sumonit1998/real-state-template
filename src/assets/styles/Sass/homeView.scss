@@ -547,3 +547,41 @@
         }
     }
 }
+
+
+@media (max-width: 767.98px) {
+
+    .hero-slider {
+        .carousel__item {
+            height: 50vh;
+            .carousel-text {
+                transform: translate(0%, 10%);
+            }            
+        }
+    }
+
+    .sidebar { 
+        .work-faq {
+            .accordion {
+                display: block;
+                .accrdion-content {
+                    margin-left: 0px;
+                    width: 100%;
+                    margin-top: 30px;
+                    .accordion-item {
+                        .icon {
+                            i {
+                                font-size: 24px;
+                            }
+                        }
+                        .title {
+                            h2 {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

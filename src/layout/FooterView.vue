@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="about">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="about mt-4">
                                     <div class="heading">
                                         <h4>About Us</h4>
                                     </div>
@@ -14,8 +14,8 @@
                                     <p class="text-night">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et? Ex ea ipsa dolores voluptatum maxime laudantium soluta eum excepturi!</p>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="latest-post">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="latest-post mt-4">
                                     <div class="heading">
                                         <h4>Latest Post</h4>
                                     </div>
@@ -35,8 +35,8 @@
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="quick-link">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="quick-link mt-4">
                                     <div class="heading">
                                         <h4>Contact Us</h4>
                                     </div>
@@ -55,8 +55,8 @@
                                     
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="latest-post">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="latest-post mt-4">
                                     <div class="heading">
                                         <h4>Newsletter</h4>
                                     </div>
