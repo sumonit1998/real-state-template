@@ -12,16 +12,18 @@ const getters = {}
 const actions = {
   async getAllLatestPosts ({ commit }) {
     //const products = await shop.getProducts()
-    try {
+    // try {
       const latestPosts = await axios.get(
         "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=dd29379b24b146158f657cbdbceb0dac"
       );
       commit("setLatestPosts", latestPosts.data.articles);
       //console.log(products.data.articles);
-    } catch (error) {
-      alert(error);
-      console.log(error);
-    }
+    // } catch (error) {
+    //   alert(error);
+    //   console.log(error);
+    // }
+    //const allpost = latestPosts;
+   // console.log(allpost)
   }
 }
 
@@ -37,5 +39,5 @@ export default {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 }
